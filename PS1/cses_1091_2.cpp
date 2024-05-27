@@ -1,47 +1,32 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <set>
 using namespace std;
 
-bool sortbyprice (const pair<int, pair<int,int> > &a, const pair<int, pair<int,int> > &b) {
-    return (a.second.first < b.second.first);
-}
-
 int main(){
-    vector<int> tickets;
     int n,m;
-    cin >> n>>m;
+    cin>>n;
+    cin>>m;
+    multiset <int> price;
     for (int i=0; i<n; i++){
         int x;
         cin>>x;
-        tickets.push_back(x);
+        price.insert(x);
     }
-    vector <pair<int, pair<int,int> > > bids;
-    for(int j=0; j<m; j++){
+    for (int j=1; j<=m; j++){
         int y;
         cin>>y;
-        bids.push_back(make_pair(j,make_pair(y,-1)));
-    }
-
-    sort(tickets.begin(), tickets.end());
-    sort(bids.begin(), bids.end(), sortbyprice);
-
-    int tic_loc = n-1;
-    int bid_loc = m-1;
-
-    while (tic_loc>=0 && bid_loc>=0){
-        if(bids[bid_loc].second.first >= tickets[tic_loc]){
-            bids[bid_loc].second.second = tickets[tic_loc];
-            bid_loc--;
-            tic_loc--;
-        }
+        if (price.empty()) {cout << "-1";}
         else {
-            tic_loc--;
+            auto itr = price.upper_bound(y);
+            if ((itr == price.begin())) cout << "-1";
+            else {
+                itr--;
+                cout << *(itr);
+                price.erase(itr);
+            }
         }
-    }
-    sort(bids.begin(), bids.end());
-    for(int k=0; k<m; k++){
-        cout<<bids[k].first <<" "<< bids[k].second.first <<" "<< bids[k].second.second<< endl;
-        // cout<<bids[k].second.second<< "\n";
+        
+        if (j!= m) cout<<"\n";
     }
     return 0;
 }
