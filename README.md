@@ -1,8 +1,8 @@
 # AlgoArena_Programming_Club_Project
 
 ## PS-1
-Problems tried and Accepted - 9 <br>
-Problems Tried and Not Accepted - 1 <br>
+Problems tried and Accepted - 10 <br>
+Problems Tried and Not Accepted - 0 <br>
 Problems not tried - 0 <br>
 
 ## PS-2
