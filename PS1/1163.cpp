@@ -1,52 +1,38 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <set>
+// #include <algorithm>
 using namespace std;
 
 int main(){
-    set <int> lamps;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int x,n;
     cin>>x;
     cin>>n;
-    lamps.insert(0);
-    lamps.insert(x);
-    auto pos1 = lamps.begin();
-    // cout<< *pos1;
-    // pos1 ++;
-    // cout<< *pos1;
+    multiset <int> passage_lengths;
+    // multiset <int, greater<int> > passage_lengths;
+    multiset <int> position_of_lamps;
+    position_of_lamps.insert(0);
+    position_of_lamps.insert(x);
+    passage_lengths.insert(x);
 
-    int y;
-    cin>> y;
-    lamps.insert(y);
-    auto pos2 = lamps.find(y);
-    int dist1 = *(++pos1) - *(--pos1);
-    int dist2 = *(++pos2) - *(--pos2);
-    if (dist1<dist2){
-        int temp = dist1;
-        dist1 = dist2;
-        dist2 = temp;
-        auto temp_ptr = pos1;
-        pos1 = pos2;
-        pos2 = temp_ptr;
+    for(int i=0; i<n; i++){
+        int a;
+        cin>> a;
+        position_of_lamps.insert(a);
+        // auto itr = position_of_lamps.upper_bound(a);
+        auto itr = position_of_lamps.find(a);
+        int dist1 = *(next(itr)) - *(itr);
+        int dist2 = *itr - *(prev(itr));
+        // auto itr2 = passage_lengths.find(dist1+dist2);
+        passage_lengths.insert(dist1);
+        passage_lengths.insert(dist2);
+        passage_lengths.erase(passage_lengths.find(dist1+dist2));
+        // passage_lengths.erase(dist1+dist2);
+        // auto itr3 = passage_lengths.end();
+        cout<< *(passage_lengths.rbegin());
+        if (i != (n-1)) cout<< " ";
     }
-    cout<<dist1;
-    if (n==1) return 0;
 
-    for (int i=1; i<n; i++){
-        int y;
-        cin>> y;
-        lamps.insert(y);
-        auto pos_new = lamps.find(y);
-        auto pos_prev = pos_new-;
-        if((pos_prev) == (pos1)){
-            int dist_a = *(pos_new) - *(pos_prev);
-            int dist_b = *(++pos_new) - *(--pos_new);
-            if (dist_a>dist_b){
-                if (dist_b>dist2){
-                    pos2 = pos_new;
-                    dist1 = dist_a;
-                    dist2 = dist_b;
-                } else if (dist2>dist_a)
-            }
-        }
-    }
     return 0;
 }
