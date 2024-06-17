@@ -21,7 +21,7 @@ int func(int a, int b){
         ans = ans>curr ? curr : ans;
     }
     for(int i=1; i<((b/2)+1); i++){
-        int curr = 1 + func(a,i) + func(a,b-1);
+        int curr = 1 + func(a,i) + func(a,b-i);
         ans = ans>curr ? curr : ans;
     }
     memo[a][b] = ans;
