@@ -18,5 +18,5 @@ Problems tried and Accepted - 3 <br>
 Problems Tried and Not Accepted - 2 <br>
 
 ## PS-5
-Problems tried and Accepted - 4 <br>
-Problems Tried and Not Accepted - 1 <br>
+Problems tried and Accepted - 6 <br>
+Problems Tried and Not Accepted - 2 <br>
