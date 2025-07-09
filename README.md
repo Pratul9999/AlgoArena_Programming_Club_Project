@@ -1,22 +1,3 @@
 # AlgoArena_Programming_Club_Project
 
-## PS-1
-Problems tried and Accepted - 10 <br>
-Problems Tried and Not Accepted - 0 <br>
-Problems not tried - 0 <br>
-
-## PS-2
-Problems tried and Accepted - 1 <br>
-Problems Tried and Not Accepted - 3 <br>
-
-## PS-3
-Problems tried and Accepted - 1 <br>
-Problems Tried and Not Accepted - 2 <br>
-
-## PS-4
-Problems tried and Accepted - 3 <br>
-Problems Tried and Not Accepted - 2 <br>
-
-## PS-5
-Problems tried and Accepted - 8 <br>
-Problems Tried and Not Accepted - 2 <br>
+This Repository consists of my Solutions to selected problems that have been practiced during Summer Project Algo Arena 2.0 by Programming Club IIT Kanpur, during May'24 - July'24.
